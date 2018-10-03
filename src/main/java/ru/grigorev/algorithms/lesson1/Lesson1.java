@@ -24,22 +24,22 @@ public class Lesson1 {
 
     public static int exponentiation(int base, int power) { // O(log n * n)
         int newPower = power;
-        int newbase = base;
+        int newBase = base;
         List<Integer> values = new ArrayList<>();
         while (newPower != 2) { // O(log n)
             if (newPower % 2 == 0) {
                 newPower = newPower / 2;
-                newbase *= newbase;
+                newBase *= newBase;
             } else {
                 newPower = newPower - 1;
-                values.add(newbase);
+                values.add(newBase);
             }
         }
-        newbase *= newbase;
+        newBase *= newBase;
         for (int i = 0; i < values.size(); i++) { // O (n)
-            newbase *= values.get(i);
+            newBase *= values.get(i);
         }
-        return newbase; // O(log n) * O(n) = O(log n * n)
+        return newBase; // O(log n) * O(n) = O(log n * n)
     }
 
     public static int minValue(int[] array) { // O(n)
